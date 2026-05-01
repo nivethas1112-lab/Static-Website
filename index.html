@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png.png">
+    <link rel="apple-touch-icon" href="logo.png.png">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,20 +23,37 @@
     <nav>
         <div class="nav-content">
             <div class="logo-group">
-                <img src="logo.png" alt="India Dairy Show">
+                <img src="logo.png.png" alt="India Dairy Show">
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Exhibitors</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#exhibitor">Exhibitor <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#why-exhibit">Why Exhibit</a></li>
+                        <li><a href="#categories">Exhibit Profile</a></li>
+                        <li><a href="#brochure">Event Brochure</a></li>
+                        <li><a href="#layout">Layout</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#visitors">Visitors <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#visitors">Visitor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#media">Media <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#photos">Event Photos</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
             <div class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
-            </div>
-            <div class="nav-actions">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-user"></i>
             </div>
         </div>
     </nav>
@@ -67,50 +84,42 @@
         <section id="about" class="section-padding bg-white">
             <div class="container">
                 <div class="about-grid">
-                    <div>
-                        <h2 class="section-title">Who We Are</h2>
-                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">We, <strong>Prompt
-                                Trade Fairs India Private Limited</strong>, are the pioneers in the field of Exhibitions
-                            with over 1200 successful events over a decade.</p>
-                        <p style="color: var(--text-muted); font-size: 1.05rem;">The 1st Edition of India Dairy Show is
-                            an unparalleled opportunity to explore the future of the dairy industry, focusing on
-                            innovation, sustainability, and regional market trends.</p>
+                    <!-- Image/Visual Column -->
+                    <div class="reveal relative" style="position: relative;">
+                        <div class="about-image-wrapper">
+                            <img src="about.png" alt="Dairy Innovation" class="main-about-img" onerror="this.src='about.png'">
+                            <div class="experience-badge">
+                                <span class="years">10+</span>
+                                <span class="text">Years of<br>Excellence</span>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <div style="background: var(--mild-green); padding: 3rem; border-radius: 30px;">
-                            <h3
-                                style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem;">
-                                Event Highlights</h3>
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: 1.2rem; display: flex; gap: 1.2rem; align-items: center;">
-                                    <div
-                                        style="width: 40px; height: 40px; background: var(--pure-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg);">
-                                        <i class="fas fa-crown" style="color: var(--primary-color);"></i>
-                                    </div>
-                                    <span>South India's Largest Dairy Summit</span>
-                                </li>
-                                <li style="margin-bottom: 1.2rem; display: flex; gap: 1.2rem; align-items: center;">
-                                    <div
-                                        style="width: 40px; height: 40px; background: var(--pure-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg);">
-                                        <i class="fas fa-leaf" style="color: #27ae60;"></i>
-                                    </div>
-                                    <span>Innovation & Sustainability Focus</span>
-                                </li>
-                                <li style="margin-bottom: 1.2rem; display: flex; gap: 1.2rem; align-items: center;">
-                                    <div
-                                        style="width: 40px; height: 40px; background: var(--pure-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg);">
-                                        <i class="fas fa-users" style="color: var(--primary-color);"></i>
-                                    </div>
-                                    <span>Networking with 10k+ Professionals</span>
-                                </li>
+                    
+                    <!-- Text Column -->
+                    <div class="reveal about-text-content">
+                        <span class="pre-title">About The Organizer</span>
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem; font-size: 3.2rem;">Pioneering the Future of Dairy</h2>
+                        <p style="margin-bottom: 2rem; font-size: 1.15rem; color: var(--text-main); font-weight: 500; line-height: 1.7;">We, <strong>Prompt Trade Fairs India Private Limited</strong>, are the pioneers in the field of Exhibitions with over 800 successful events across a decade in all over pan India. .</p>
+                        
+                     
+                        <!-- Highlights List -->
+                        <div class="highlights-list-wrapper">
+                            <ul class="highlights-list">
+                                <li><i class="fas fa-crown"></i> South India's Largest</li>
+                                <li><i class="fas fa-leaf"></i> Sustainability Focus</li>
+                                <li><i class="fas fa-users"></i> 10k+ Professionals</li>
+                                <li><i class="fas fa-handshake"></i> Global Networking</li>
                             </ul>
+                        </div>
+                        
+                        <div style="text-align: left; margin-top: 2rem;">
+                            <a href="#categories" class="btn-solid">Learn more</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Success Numbers in Sky Blue Cards -->
-                <div class="about-stats"
-                    style="margin-top: 6rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem;">
+                <!-- Success Numbers -->
+                <div class="about-stats reveal">
                     <div class="stat-card">
                         <h3>1200+</h3>
                         <p>Exhibitions Organized</p>
@@ -134,43 +143,34 @@
         <!-- New elaborate section: Why Exhibit & Visit -->
         <section class="section-padding bg-lightgreen">
             <div class="container">
-                <div class="about-grid">
-                    <div class="reveal">
-                        <h2 class="section-title">Why Exhibit?</h2>
-                        <p style="margin-bottom: 2rem;">Showcase your products to a highly targeted audience of dairy
-                            professionals and decision-makers.</p>
-                        <ul style="list-style: none;">
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-check"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Generate
-                                High-Quality B2B Leads</li>
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-check"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Enhance Brand
-                                Visibility in South India</li>
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-check"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Launch New Products
-                                & Technologies</li>
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-check"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Network with
-                                Industry Global Leaders</li>
+                <div class="reasons-grid">
+                    <!-- Why Exhibit Card -->
+                    <div class="reason-card exhibit-card reveal">
+                        <div class="reason-header">
+                            <i class="fas fa-store"></i>
+                            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.2rem; margin: 0;">Why Exhibit?</h2>
+                        </div>
+                        <p>Showcase your products to a highly targeted audience of dairy professionals and decision-makers.</p>
+                        <ul class="reason-list">
+                            <li><i class="fas fa-check-circle"></i> Generate High-Quality B2B Leads</li>
+                            <li><i class="fas fa-check-circle"></i> Enhance Brand Visibility in South India</li>
+                            <li><i class="fas fa-check-circle"></i> Launch New Products & Technologies</li>
+                            <li><i class="fas fa-check-circle"></i> Network with Global Industry Leaders</li>
                         </ul>
                     </div>
-                    <div class="reveal">
-                        <h2 class="section-title">Why Visit?</h2>
-                        <p style="margin-bottom: 2rem;">Stay ahead of the curve by exploring the latest advancements and
-                            trends in the dairy sector.</p>
-                        <ul style="list-style: none;">
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-arrow-right"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Discover
-                                Cutting-Edge Farm Automation</li>
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-arrow-right"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Source New Suppliers
-                                & Partners</li>
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-arrow-right"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Attend Technical
-                                Seminars & Workshops</li>
-                            <li style="margin-bottom: 1rem;"><i class="fas fa-arrow-right"
-                                    style="color: var(--primary-color); margin-right: 0.5rem;"></i> Competitive Market
-                                Intelligence</li>
+
+                    <!-- Why Visit Card -->
+                    <div class="reason-card visit-card reveal">
+                        <div class="reason-header">
+                            <i class="fas fa-user-check"></i>
+                            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.2rem; margin: 0;">Why Visit?</h2>
+                        </div>
+                        <p>Stay ahead of the curve by exploring the latest advancements and trends in the dairy sector.</p>
+                        <ul class="reason-list">
+                            <li><i class="fas fa-arrow-alt-circle-right"></i> Discover Cutting-Edge Farm Automation</li>
+                            <li><i class="fas fa-arrow-alt-circle-right"></i> Source New Suppliers & Partners</li>
+                            <li><i class="fas fa-arrow-alt-circle-right"></i> Attend Technical Seminars & Workshops</li>
+                            <li><i class="fas fa-arrow-alt-circle-right"></i> Competitive Market Intelligence</li>
                         </ul>
                     </div>
                 </div>
@@ -180,16 +180,16 @@
         <!-- Category Section with Images -->
         <section id="categories" class="section-padding bg-white">
             <div class="container">
-                <div style="text-align: center; max-width: 700px; margin: 0 auto 5rem;">
-                    <h2 class="section-title">Exhibitor Profiles</h2>
-                    <p style="color: var(--text-muted);">Explore the entire dairy value chain, from farming technology
+                <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+                    <h2 class="section-title" style="margin-bottom: 1rem;">Exhibitor Profiles</h2>
+                    <p style="font-size: 1.1rem;">Explore the entire dairy value chain, from farming technology
                         to advanced cold chain logistics.</p>
-                </div>
+                                    </div>
 
                 <div class="categories-grid">
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="tech.png" alt="Dairy Farming Technology">
+                            <img src="assets/dairy farming.png" alt="Dairy Farming Technology">
                         </div>
                         <div class="category-content">
                             <h3>Dairy Farming Tech</h3>
@@ -199,7 +199,7 @@
 
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="nutrition.png" alt="Animal Health & Nutrition">
+                            <img src="assets/animal health.png" alt="Animal Health & Nutrition">
                         </div>
                         <div class="category-content">
                             <h3>Animal Health</h3>
@@ -209,7 +209,7 @@
 
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="cold_chain.png" alt="Cold Chain Logistics">
+                            <img src="assets/cold chain logistics.png" alt="Cold Chain Logistics">
                         </div>
                         <div class="category-content">
                             <h3>Cold Chain & Logistics</h3>
@@ -219,7 +219,7 @@
 
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="hero.png" alt="Milk Processing Facility">
+                            <img src="assets/milk processing.jpg" alt="Milk Processing Facility">
                         </div>
                         <div class="category-content">
                             <h3>Milk Processing</h3>
@@ -229,7 +229,7 @@
 
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="hero_bg.png" alt="Livestock Breeding">
+                            <img src="assets/cattle breeding.png" alt="Livestock Breeding">
                         </div>
                         <div class="category-content">
                             <h3>Cattle Breeding</h3>
@@ -239,7 +239,7 @@
 
                     <div class="category-card">
                         <div class="category-img">
-                            <img src="card for home page.jpg" alt="Dairy Product Packaging">
+                            <img src="assets/dairy packagingg.jpg" alt="Dairy Product Packaging">
                         </div>
                         <div class="category-content">
                             <h3>Dairy Packaging</h3>
@@ -253,9 +253,9 @@
         <!-- Visitors Section (Box Style) -->
         <section class="section-padding bg-lightgreen" id="visitors">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 5rem;">
-                    <h2 class="section-title">Who Should Visit?</h2>
-                    <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Connect with the entire dairy ecosystem, from farm to table.</p>
+                <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+                    <h2 class="section-title" style="margin-bottom: 1rem;">Who Should Visit?</h2>
+                    <p style="font-size: 1.1rem;">Connect with the entire dairy ecosystem, from farm to table.</p>
                 </div>
                 <div class="visitor-cards-grid">
                     <div class="visitor-card">
@@ -300,45 +300,82 @@
                     <h2>Advanced Dairy Farming</h2>
                     <p>Experience the harmony of nature and technology. Our exhibition showcases the latest in humane
                         and efficient milk farming.</p>
-                    <a href="#categories" class="btn-primary"
-                        style="background: white; color: var(--primary-color); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                        Explore Technologies <i class="fas fa-chevron-right"></i>
+                    <a href="#categories" class="btn-solid" style="background: var(--bg-white); color: var(--primary); border-color: var(--bg-white); font-size: 1.1rem;">
+                        Explore Technologies <i class="fas fa-chevron-right" style="margin-left: 0.5rem;"></i>
                     </a>
                 </div>
             </div>
 
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section-padding bg-lightgreen">
+        <!-- Testimonial Section -->
+        <section id="testimonials" class="section-padding bg-lightgreen">
             <div class="container">
-                <div class="about-grid" style="align-items: center;">
-                    <div>
-                        <h2 class="section-title">Get In Touch</h2>
-                        <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Join us at the India Dairy Show
-                            2027. Contact our team for sponsorship and bookings.</p>
-                        <div style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.5rem;">
-                            <i class="fas fa-envelope fa-2x" style="color: var(--primary-color);"></i>
-                            <div>
-                                <p style="font-weight: 700;">Email Us</p>
-                                <p style="color: var(--text-muted);">info@indiadairyshow.com</p>
+                <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+                    <span class="pre-title" style="display: block; margin-bottom: 0.5rem; text-align: center;">Testimonials</span>
+                    <h2 class="section-title" style="margin-bottom: 1rem;">What Industry Leaders Say</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-muted);">Hear from professionals who have experienced the transformative impact of our exhibitions.</p>
+                </div>
+                
+                <div class="testimonial-slider-container reveal">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text">"The India Dairy Show provided an unmatched platform to showcase our new milking technologies. The quality of leads and networking opportunities were exceptional."</p>
+                            <div class="testimonial-author">
+                                <img class="author-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar">
+                                <div class="author-info">
+                                    <h4>Rajesh Kumar</h4>
+                                    <p>CEO, AgriTech Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text">"A truly professional event. We found exactly the cold chain logistics partners we needed. Highly recommended for anyone serious about the dairy industry."</p>
+                            <div class="testimonial-author">
+                                <img class="author-avatar-img" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                                <div class="author-info">
+                                    <h4>Priya Sharma</h4>
+                                    <p>Director, Pure Milk Processors</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text">"The focus on sustainability and innovation was very impressive. The technical seminars offered invaluable insights into future market trends."</p>
+                            <div class="testimonial-author">
+                                <img class="author-avatar-img" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Dr. Vikram Singh">
+                                <div class="author-info">
+                                    <h4>Dr. Vikram Singh</h4>
+                                    <p>Lead Researcher, Dairy Science Inst.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text">"As an investor, this was the best place to find emerging dairy startups. The organization by Prompt Trade Fairs was absolutely top-notch."</p>
+                            <div class="testimonial-author">
+                                <img class="author-avatar-img" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Anand Patel">
+                                <div class="author-info">
+                                    <h4>Anand Patel</h4>
+                                    <p>Partner, Green Ventures</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <form
-                            style="background: white; padding: 4rem; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.05);">
-                            <input type="text" placeholder="Your Name"
-                                style="width: 100%; padding: 1.2rem; margin-bottom: 1.5rem; border: 1px solid #eee; border-radius: 15px;">
-                            <input type="email" placeholder="Email Address"
-                                style="width: 100%; padding: 1.2rem; margin-bottom: 1.5rem; border: 1px solid #eee; border-radius: 15px;">
-                            <textarea placeholder="Message" rows="4"
-                                style="width: 100%; padding: 1.2rem; margin-bottom: 1.5rem; border: 1px solid #eee; border-radius: 15px; resize: none;"></textarea>
-                            <button type="submit" class="btn-primary"
-                                style="width: 100%; border: none; cursor: pointer; justify-content: center;">
-                                Send Message
-                            </button>
-                        </form>
+                    
+                    <div class="testimonial-controls">
+                        <button class="slider-btn prev-btn" id="prevTestimonial" aria-label="Previous Testimonial"><i class="fas fa-chevron-left"></i></button>
+                        <div class="slider-dots" id="testimonialDots"></div>
+                        <button class="slider-btn next-btn" id="nextTestimonial" aria-label="Next Testimonial"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -351,10 +388,10 @@
             <div class="footer-grid">
                 <!-- About Column -->
                 <div class="footer-column">
-                    <div class="logo-group" style="margin-bottom: 2rem;">
-                        <img src="logo.png" alt="India Dairy Show" style="height: 60px;">
+                    <div class="logo-group" style="margin-bottom: 1.5rem;">
+                        <img src="logo.png.png" alt="India Dairy Show" style="height: 60px;">
                     </div>
-                    <p style="color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 2rem;">
+                    <p style="line-height: 1.8; margin-bottom: 2rem;">
                         Pioneers in the field of exhibitions for over a decade. Setting the stage for dairy innovation
                         across South India.
                     </p>
@@ -376,31 +413,20 @@
                     </ul>
                 </div>
 
-                <!-- Categories Column -->
-                <div class="footer-column">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="#categories">Dairy Farming</a></li>
-                        <li><a href="#categories">Animal Health</a></li>
-                        <li><a href="#categories">Cold Chain</a></li>
-                        <li><a href="#categories">Milk Processing</a></li>
-                    </ul>
-                </div>
-
                 <!-- Contact Column -->
                 <div class="footer-column">
                     <h4>Get In Touch</h4>
-                    <ul style="color: rgba(255,255,255,0.6);">
+                    <ul style="">
                         <li style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <i class="fas fa-location-dot" style="color: var(--primary-color); margin-top: 5px;"></i>
+                            <i class="fas fa-location-dot" style="color: var(--secondary); margin-top: 5px; flex-shrink: 0;"></i>
                             <span>Prompt Trade Fairs India Pvt Ltd, Chennai</span>
                         </li>
                         <li style="display: flex; gap: 1rem; align-items: center;">
-                            <i class="fas fa-envelope" style="color: var(--primary-color);"></i>
+                            <i class="fas fa-envelope" style="color: var(--secondary); flex-shrink: 0;"></i>
                             <span>info@indiadairyshow.com</span>
                         </li>
                         <li style="display: flex; gap: 1rem; align-items: center;">
-                            <i class="fas fa-phone" style="color: var(--primary-color);"></i>
+                            <i class="fas fa-phone" style="color: var(--secondary); flex-shrink: 0;"></i>
                             <span>+91 91234 56789</span>
                         </li>
                     </ul>
@@ -408,8 +434,8 @@
             </div>
 
             <div class="footer-bottom">
-                &copy; 2027 India Dairy Show. All rights reserved. Organized by Prompt Trade Fairs India Private
-                Limited.
+                &copy; 2027 India Dairy Show. All rights reserved. Designed & Developed by Ocean Softwares.
+                
             </div>
         </div>
     </footer>

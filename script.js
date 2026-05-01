@@ -84,7 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const startCounter = () => {
         stats.forEach(stat => {
-            const target = parseInt(stat.innerText.replace('+', ''));
+            const originalText = stat.innerText;
+            const numberMatch = originalText.match(/(\d+)/);
+            const hasK = originalText.includes('k');
+            const hasPlus = originalText.includes('+');
+            
+            const target = numberMatch ? parseInt(numberMatch[1]) : 0;
             let count = 0;
             const duration = 2000; // 2 seconds
             const increment = target / (duration / 16); // 60fps
@@ -92,10 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const updateCount = () => {
                 if (count < target) {
                     count += increment;
-                    stat.innerText = Math.ceil(count) + (stat.innerText.includes('+') ? '+' : '');
+                    const displayNum = Math.ceil(count);
+                    const suffix = hasK ? 'k' : '';
+                    stat.innerText = displayNum + suffix + (hasPlus ? '+' : '');
                     requestAnimationFrame(updateCount);
                 } else {
-                    stat.innerText = target + (stat.innerText.includes('+') ? '+' : '');
+                    stat.innerText = target + (hasK ? 'k' : '') + (hasPlus ? '+' : '');
                 }
             };
             updateCount();
@@ -123,23 +130,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Contact Form Submission (Mock)
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
+    // Testimonial Slider
+    const track = document.getElementById('testimonialTrack');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    const dotsContainer = document.getElementById('testimonialDots');
+    
+    if (track) {
+        const cards = Array.from(track.children);
+        const totalSlides = cards.length;
+        let currentIndex = 0;
+        
+        // Create dots
+        const createDots = () => {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        };
 
-            btn.innerText = 'Sending...';
-            btn.disabled = true;
+        const updateSlider = () => {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            Array.from(dotsContainer.children).forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
 
-            setTimeout(() => {
-                alert('Thank you! Your message has been sent successfully.');
-                contactForm.reset();
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }, 1500);
-        });
+        const goToSlide = (index) => {
+            currentIndex = index;
+            updateSlider();
+            resetAutoSlide();
+        };
+
+        const nextSlide = () => {
+            currentIndex = currentIndex >= totalSlides - 1 ? 0 : currentIndex + 1;
+            updateSlider();
+        };
+
+        const prevSlide = () => {
+            currentIndex = currentIndex <= 0 ? totalSlides - 1 : currentIndex - 1;
+            updateSlider();
+        };
+
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+        
+        let autoSlideInterval = setInterval(nextSlide, 3000);
+        
+        const resetAutoSlide = () => {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(nextSlide, 3000);
+        };
+        
+        createDots();
+        updateSlider();
+        
+        // Pause on hover
+        track.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        track.addEventListener('mouseleave', resetAutoSlide);
     }
 });
