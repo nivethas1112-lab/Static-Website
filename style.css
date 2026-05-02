@@ -277,7 +277,7 @@ nav.scrolled .logo-group img {
     align-items: center;
     position: relative;
     padding: 4rem 0;
-    background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 100%), url('hero_bg.png') center/cover no-repeat;
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.1) 100%), url('hero_bg.png') center/cover no-repeat;
     background-attachment: fixed;
 }
 
@@ -297,16 +297,17 @@ nav.scrolled .logo-group img {
 .hero-date {
     display: inline-block;
     padding: 0.5rem 1.2rem;
-    background: rgba(37, 99, 235, 0.15);
-    border: 1px solid rgba(37, 99, 235, 0.3);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #60A5FA;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.9rem;
     border-radius: 100px;
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-text h1 {
@@ -315,19 +316,21 @@ nav.scrolled .logo-group img {
     color: var(--bg-white);
     margin-bottom: 1.5rem;
     font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
 .blue-text { color: #60A5FA; }
 .green-text { color: var(--accent); }
 
 .hero-location {
-    color: #E2E8F0;
+    color: #F8FAFC;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 2.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.6);
 }
 .hero-location::before {
     content: '\f3c5';
@@ -1087,8 +1090,8 @@ footer::before {
     margin-top: 2rem;
 }
 .reason-card {
-    padding: 4rem 3.5rem;
-    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
     position: relative;
     overflow: hidden;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
@@ -1131,22 +1134,22 @@ footer::before {
 .reason-header {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
 }
-.reason-header i { font-size: 3rem; opacity: 0.9; }
+.reason-header i { font-size: 2.2rem; opacity: 0.9; }
 .reason-card p {
-    font-size: 1.15rem;
-    margin-bottom: 3rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 .reason-list { list-style: none; }
 .reason-list li {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
 }
 .reason-list li i {
@@ -1229,3 +1232,33 @@ footer::before {
     }
     .contact-form-wrapper { padding: 2rem; }
 }
+
+/* Scroll Triggered & Slide Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.slide-left {
+    transform: translateX(-60px);
+}
+
+.reveal.slide-right {
+    transform: translateX(60px);
+}
+
+.reveal.slide-left.active,
+.reveal.slide-right.active {
+    transform: translateX(0);
+}
+
+/* Delays for staggered animations */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
